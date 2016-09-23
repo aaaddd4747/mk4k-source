@@ -1,0 +1,301 @@
+#include "WPILib.h"
+#include <vector>
+/**
+ * This is a demo program showing the use of the RobotDrive class.
+ * The SampleRobot class is the base of a robot application that will automatically call your
+ * Autonomous and OperatorControl methods at the right time as controlled by the switches on
+ * the driver station or the field controls.
+ *
+ * WARNING: While it may look like a good choice to use for your code if you're inexperienced,
+ * don't. Unless you know what you are doing, complex code will be much more difficult under
+ * this system. Use IterativeRobot or Command-Based instead if you're new.
+ */
+class Robot: public SampleRobot
+{
+	RobotDrive myRobot; // robot drive system
+	Joystick stick,opStick; // only joystick
+	Talon lift;
+	Talon arm;
+	DigitalInput a0,a1,a2,a3,a4,a5,a6,a7,a8,a9;//auton mode ports
+	Timer auT;
+	AnalogInput line;//the line sensor
+	Encoder liftEncoder,armEncoder;//these two encoders omnomnom the available auton modes, currently 6 modes remain
+	PIDController liftpid,armpid;
+	std::vector<bool> manualLift = {false,false};
+	int fsm = -1; //all hail!
+
+public:
+	Robot() ://ctor
+			myRobot(0, 1),	// initialize the RobotDrive to use motor controllers on ports 0 and 1
+			stick(0),
+			opStick(1),
+			lift(2),
+			arm(3),
+			a0(0),
+			a1(1),
+			a2(2),
+			a3(3),
+			a4(4),
+			a5(5),
+			a6(6),
+			a7(7),
+			a8(8),
+			a9(9),
+			line(0),
+			liftEncoder(8,9,false,Encoder::k4X),
+			liftpid(0.5,0,0,&liftEncoder,&lift),
+			armEncoder(6,7,false,Encoder::k4X),
+			armpid(0.5,0,0,&armEncoder,&arm)
+	{
+		myRobot.SetExpiration(0.1);
+	}
+
+	/**
+	 * Runs the motors with arcade steering.
+	 */
+	void Disabled()
+	{
+		std::cout<<"v11"<<std::endl;
+	}
+	void wait(double secs)
+	{
+		auT.Reset();
+		auT.Start();
+		while((!auT.HasPeriodPassed(secs))&&IsEnabled())
+		{
+			//a whole lot of nothing
+		}
+		auT.Stop();
+	}
+	void waitUntil(bool &val)//might be useful? for pid control and stuff?
+	{
+		while(!&val&&IsEnabled())
+		{
+			//more nothing
+		}
+	}
+	bool getIsLine()
+	{
+		float hi = 4.0, lo = 3.0;
+		return line.GetAverageVoltage() > (hi+lo)/2;
+	}
+	int getAutMode()//really cheap autonomous mode reader
+	{
+		return (!a9.Get()) + (!a8.Get())*2 + (!a7.Get())*4;
+	}
+	int getUnaryMode()
+	{
+		int a=-1;
+		if(!a0.Get())
+			a = 0;
+		if(!a1.Get())
+			a = 1;
+		if(!a2.Get())
+			a = 2;
+		if(!a3.Get())
+			a = 3;
+		if(!a4.Get())
+			a = 4;
+		if(!a5.Get())
+			a = 5;
+		if(!a6.Get())
+			a = 6;
+		if(!a7.Get())
+			a = 7;
+		if(!a8.Get())
+			a = 8;
+		if(!a9.Get())
+			a = 9;
+		return a;
+	}
+	void Autonomous()
+	{
+		//int mode = getAutMode();
+		int mode = getUnaryMode();
+		myRobot.SetExpiration(10);
+		myRobot.SetInvertedMotor(RobotDrive::kFrontLeftMotor,1);
+		myRobot.SetInvertedMotor(RobotDrive::kFrontRightMotor,1);
+		wait(0.01);//to make debug prints visible
+		switch(mode)
+		{
+		case -1:
+			std::cout<<"MODE -1"<<std::endl;
+			break;
+		case 0:
+			std::cout<<"MODE 0"<<std::endl;
+			//do nothing
+			break;
+		case 1:
+			std::cout<<"MODE 1"<<std::endl;
+			//some stuff
+			myRobot.ArcadeDrive(-0.5,0,0);
+			wait(1);
+			myRobot.ArcadeDrive(0,0,0);
+			break;
+		case 2:
+			std::cout<<"MODE 2"<<std::endl;
+			myRobot.ArcadeDrive(-1,0,0);
+			wait(0.4);
+			myRobot.ArcadeDrive(0,0,0);
+			//more stuff
+			break;
+		case 3:
+			std::cout<<"MODE 3"<<std::endl;
+			//more
+			myRobot.ArcadeDrive(1,0,0);
+			wait(0.1);
+			myRobot.ArcadeDrive(0,0,0);
+			break;
+		case 4:
+			std::cout<<"MODE 4"<<std::endl;
+			myRobot.ArcadeDrive(1,0,0);
+			wait(0.4);
+			myRobot.ArcadeDrive(0,0,0);
+			//and more
+			break;
+		case 5:
+			std::cout<<"MODE 5"<<std::endl;
+			//and more
+			break;
+		case 6:
+			std::cout<<"MODE 6"<<std::endl;
+			//you know the drill
+			break;
+		case 7:
+			std::cout<<"MODE 7"<<std::endl;
+			//last mode available
+			break;
+		case 8:
+			std::cout<<"MODE 8"<<std::endl;
+			break;
+		case 9:
+			std::cout<<"MODE 9"<<std::endl;
+			break;
+		case 10:
+			std::cout<<"MODE 10"<<std::endl;
+		}
+		myRobot.SetExpiration(0.1);
+		myRobot.SetInvertedMotor(RobotDrive::kFrontLeftMotor,0);
+		myRobot.SetInvertedMotor(RobotDrive::kFrontRightMotor,0);
+	}
+	float dead(float a, float kil)
+	{
+		bool neg = false;
+		if(a<0)
+		{
+			a = -a;
+			neg = true;
+		}
+		if(a<kil)//deadzone implementation
+		{
+			a = 0;
+		}
+		else
+		{
+			a = (a-kil)/(1-kil);
+		}
+		if(neg)
+			a = -a;
+		return a;
+	}
+	bool debounceFlip(bool var, std::vector<bool>& a)
+	{
+		if((var != a[0]) && var )
+		{
+			a[1] = !a[1];
+		}
+		a[0] = var;
+		return a[1];
+	}
+	void theUglyThreadling()//"multi"threading without a thread [test: perform the go-down and grab then move up action thing™]
+	{
+		switch(fsm)
+		{
+		case -1://do nothing in this case
+			break;
+		case 0:
+			liftpid.SetSetpoint(20);//arbitrary numbers out of my ass do not trust any of them
+			if(liftpid.OnTarget())
+				fsm++;
+			break;
+		case 1:
+			armpid.SetSetpoint(1);
+			if(armpid.OnTarget())
+				fsm++;
+			break;
+		case 2:
+			liftpid.SetSetpoint(0);
+			if(liftpid.OnTarget())
+				fsm++;
+			break;
+		case 3:
+			armpid.SetSetpoint(0);
+			if(armpid.OnTarget())
+				fsm++;
+			break;
+		case 4:
+			liftpid.SetSetpoint(20);
+			if(liftpid.OnTarget())
+				fsm = -1; //reset
+			break;
+		}
+	}
+	void OperatorControl()
+	{
+		myRobot.SetInvertedMotor(RobotDrive::kFrontLeftMotor,0);
+		myRobot.SetInvertedMotor(RobotDrive::kFrontRightMotor,0);
+		float throttle,liftcmd,armcmd,lifthold;
+		while (IsOperatorControl() && IsEnabled())
+		{
+			//myRobot.ArcadeDrive(stick); // drive with arcade style (use right stick)
+			throttle = (stick.GetThrottle()-1)/-2;
+			//std::cout<<"throttle: "<<throttle<<std::endl;
+			myRobot.ArcadeDrive(dead(stick.GetY(),0.05)*throttle,-dead(stick.GetX(),0.05)*throttle,false);
+			//very basic lift and arm implementation
+			//std::cout<<"code"<<std::endl;
+			//std::cout<<dead(stick.GetY(),0.05)*throttle<<std::endl;
+			if(debounceFlip(opStick.GetRawButton(2),manualLift))
+			{
+				liftpid.Disable();
+				armpid.Disable();
+				liftcmd = (opStick.GetZ())/-2;
+				//std::cout<<lifthold<<std::endl;
+				//liftcmd = dead(opStick.GetY(),0.05)+lifthold;
+				std::cout<<liftcmd<<std::endl;
+				lift.SetSpeed(liftcmd);
+				if(opStick.GetRawButton(6))
+					armcmd +=1;
+				if(opStick.GetRawButton(7))
+					armcmd -=1;
+				arm.SetSpeed(armcmd);
+				std::cout<<"manual"<<std::endl;
+			}
+			else
+			{
+				liftpid.Enable();
+				armpid.Enable();
+				std::cout<<"automatic"<<std::endl;
+			}
+			liftcmd = 0;
+			armcmd = 0;
+			std::cout<<"line: "<<line.GetAverageVoltage();
+			std::cout<<std::endl;
+			//if(stick.GetRawButton(7))
+				//liftcmd += 0.5;
+			//if(stick.GetRawButton(8))
+				//liftcmd -= 0.5;
+			//if(stick.GetRawButton(9))
+				//armcmd += 0.5;
+			//if(stick.GetRawButton(10))
+				//armcmd -= 0.5;
+			//lift.SetSpeed(liftcmd);
+			//arm.SetSpeed(armcmd);
+			if(stick.GetRawButton(7)&&fsm==-1)
+				fsm = 0;
+			theUglyThreadling();
+			Wait(0.005);				// wait for a motor update time
+		}
+	}
+};
+
+START_ROBOT_CLASS(Robot);

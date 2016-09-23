@@ -1,0 +1,142 @@
+#include "WPILib.h"
+#include <vector>
+/**
+ * This is a demo program showing the use of the RobotDrive class.
+ * The SampleRobot class is the base of a robot application that will automatically call your
+ * Autonomous and OperatorControl methods at the right time as controlled by the switches on
+ * the driver station or the field controls.
+ *
+ * WARNING: While it may look like a good choice to use for your code if you're inexperienced,
+ * don't. Unless you know what you are doing, complex code will be much more difficult under
+ * this system. Use IterativeRobot or Command-Based instead if you're new.
+ */
+class Robot: public SampleRobot
+{
+	RobotDrive myRobot; // robot drive system
+	Joystick stick; // only joystick
+	Talon lift;
+	Talon arm;
+	DigitalInput a7,a8,a9;//auton mode ports
+	Timer auT;
+
+public:
+	Robot() :
+			myRobot(0, 1),	// initialize the RobotDrive to use motor controllers on ports 0 and 1
+			stick(0),
+			lift(2),
+			arm(3),
+			a7(7),
+			a8(8),
+			a9(9)
+	{
+		myRobot.SetExpiration(0.1);
+	}
+
+	/**
+	 * Runs the motors with arcade steering.
+	 */
+	void wait(double secs)
+	{
+		auT.Reset();
+		auT.Start();
+		while((!auT.HasPeriodPassed(secs))&&IsEnabled())
+		{
+			//a whole lot of nothing
+		}
+		auT.Stop();
+	}
+	int getAutMode()//really cheap autonomous mode reader
+	{
+		return a9.Get() + a8.Get()*2 + a7.Get()*4;
+	}
+	void Autonomous()//currently only contains empty framework
+	{
+		int mode = getAutMode();
+		switch(mode)
+		{
+		case 0:
+			std::cout<<"MODE 0"<<std::endl;
+			//do nothing
+			break;
+		case 1:
+			std::cout<<"MODE 1"<<std::endl;
+			//some stuff
+			std::cout<<"a test of time"<<std::endl;
+			wait(3);
+			std::cout<<"waited 3 seconds"<<std::endl;
+			break;
+		case 2:
+			std::cout<<"MODE 2"<<std::endl;
+			//more stuff
+			break;
+		case 3:
+			std::cout<<"MODE 3"<<std::endl;
+			//more
+			break;
+		case 4:
+			std::cout<<"MODE 4"<<std::endl;
+			//and more
+			break;
+		case 5:
+			std::cout<<"MODE 5"<<std::endl;
+			//and more
+			break;
+		case 6:
+			std::cout<<"MODE 6"<<std::endl;
+			//you know the drill
+			break;
+		case 7:
+			std::cout<<"MODE 7"<<std::endl;
+			//last mode available
+			break;
+		}
+	}
+	float dead(float a, float kil)
+	{
+		bool neg = false;
+		if(a<0)
+		{
+			a = -a;
+			neg = true;
+		}
+		if(a<kil)//deadzone implementation
+		{
+			a = 0;
+		}
+		else
+		{
+			a = (a-kil)/(1-kil);
+		}
+		if(neg)
+			a = -a;
+		return a;
+	}
+	void OperatorControl()
+	{
+		float throttle,liftcmd,armcmd;
+		while (IsOperatorControl() && IsEnabled())
+		{
+			//myRobot.ArcadeDrive(stick); // drive with arcade style (use right stick)
+			throttle = (stick.GetThrottle()-1)/-2;
+			//std::cout<<"throttle: "<<throttle<<std::endl;
+			myRobot.ArcadeDrive(dead(stick.GetY(),0.05)*throttle,-dead(stick.GetX(),0.05)*throttle,false);
+			//very basic lift and arm implementation
+			liftcmd = 0;
+			armcmd = 0;
+			if(stick.GetRawButton(7))
+				liftcmd += 0.5;
+			if(stick.GetRawButton(8))
+				liftcmd -= 0.5;
+			if(stick.GetRawButton(9))
+				armcmd += 0.5;
+			if(stick.GetRawButton(10))
+				armcmd -= 0.5;
+			lift.SetSpeed(liftcmd);
+			arm.SetSpeed(armcmd);
+			std::cout<<!a9.Get()<<std::endl;
+			Wait(0.005);				// wait for a motor update time
+		}
+	}
+};
+
+START_ROBOT_CLASS(Robot);

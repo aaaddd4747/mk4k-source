@@ -1,0 +1,18 @@
+11:49:33 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:23:16: warning: 'Robot::liftpid' will be initialized after [-Wreorder]
+  PIDController liftpid,armpid;
+                ^
+..\src\Robot.cpp:22:10: warning:   'Encoder Robot::armEncoder' [-Wreorder]
+  Encoder armEncoder,liftEncoder;//these two encoders omnomnom the available auton modes, currently 6 modes remain
+          ^
+..\src\Robot.cpp:29:2: warning:   when initialized here [-Wreorder]
+  Robot() ://ctor
+  ^
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+
+11:49:39 Build Finished (took 5s.502ms)
+

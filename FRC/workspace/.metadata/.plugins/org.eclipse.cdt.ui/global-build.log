@@ -1,0 +1,1000 @@
+16:34:53 **** Clean-only build of configuration Debug for project Arcade Drive ****
+rm -rf src/Robot.d FRCUserProgram src/Robot.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Falcons\Desktop\e\eclipse;C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+
+16:34:53 **** Clean-only build of configuration Debug for project Arcade Drive ****
+16:39:55 **** Rebuild of configuration Debug for project Arcade Drive ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::Autonomous()':
+..\src\Robot.cpp:61:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);//could someone please tell me when the motors are NOT backwards?
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:62:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:109:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:110:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:134:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);//ensure motors in correct setting
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+16:40:48 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:42:37 **** Rebuild of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+16:44:04 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:44:05 **** Rebuild of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::Autonomous()':
+..\src\Robot.cpp:61:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);//could someone please tell me when the motors are NOT backwards?
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:62:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:109:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:110:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:134:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);//ensure motors in correct setting
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:45:08 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+Info: Nothing to build for Arcade Drive1
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+Info: Nothing to build for Arcade Drive1
+16:46:18 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:46:39 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+Info: Nothing to build for Arcade Drive1
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+Info: Nothing to build for Arcade Drive1
+Info: Nothing to build for Arcade Drive1
+16:49:55 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+arm-frc-linux-gnueabi-g++: error: src\Robot.o: No such file or directory
+16:50:32 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+16:51:56 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+Info: Nothing to build for Arcade Drive1
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:52:42 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:52:42 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:54:02 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:54:03 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::Autonomous()':
+..\src\Robot.cpp:61:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);//could someone please tell me when the motors are NOT backwards?
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:62:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:109:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:110:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:134:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);//ensure motors in correct setting
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:54:50 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:54:50 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::Autonomous()':
+..\src\Robot.cpp:61:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);//could someone please tell me when the motors are NOT backwards?
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:62:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:109:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:110:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:134:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);//ensure motors in correct setting
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:56:24 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:56:25 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'virtual void Robot::OperatorControl()':
+..\src\Robot.cpp:134:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,0);//ensure motors in correct setting
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:135:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,0);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:58:10 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:58:12 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:00:49 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:00:50 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:35:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:08:37 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:3: error: 'myRobot' is not a class, namespace, or enumeration
+   myRobot::
+   ^
+..\src\Robot.cpp:36:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+17:08:57 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:35:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+17:09:24 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:09:25 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:35:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:10:03 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:10:03 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:35:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:12:17 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:12:18 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:41:17: error: invalid conversion from 'int' to 'Robot::MotorType' [-fpermissive]
+   MotorType a = 0;
+                 ^
+..\src\Robot.cpp:42:17: error: invalid conversion from 'int' to 'Robot::MotorType' [-fpermissive]
+   MotorType b = 1;
+                 ^
+..\src\Robot.cpp:43:31: error: no matching function for call to 'RobotDrive::SetInvertedMotor(Robot::MotorType&, int)'
+   myRobot.SetInvertedMotor(a,1);
+                               ^
+..\src\Robot.cpp:43:31: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note:   no known conversion for argument 1 from 'Robot::MotorType' to 'RobotDrive::MotorType'
+..\src\Robot.cpp:44:31: error: no matching function for call to 'RobotDrive::SetInvertedMotor(Robot::MotorType&, int)'
+   myRobot.SetInvertedMotor(b,1);
+                               ^
+..\src\Robot.cpp:44:31: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note:   no known conversion for argument 1 from 'Robot::MotorType' to 'RobotDrive::MotorType'
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:13:06 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:13:07 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:43:31: error: no matching function for call to 'RobotDrive::SetInvertedMotor(Robot::MotorType&, int)'
+   myRobot.SetInvertedMotor(a,1);
+                               ^
+..\src\Robot.cpp:43:31: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note:   no known conversion for argument 1 from 'Robot::MotorType' to 'RobotDrive::MotorType'
+..\src\Robot.cpp:44:31: error: no matching function for call to 'RobotDrive::SetInvertedMotor(Robot::MotorType&, int)'
+   myRobot.SetInvertedMotor(b,1);
+                               ^
+..\src\Robot.cpp:44:31: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note:   no known conversion for argument 1 from 'Robot::MotorType' to 'RobotDrive::MotorType'
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:14:30 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:14:31 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:43:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(a,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:44:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(b,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:16:24 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:16:25 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(0,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+..\src\Robot.cpp:35:31: error: invalid conversion from 'int' to 'RobotDrive::MotorType' [-fpermissive]
+   myRobot.SetInvertedMotor(1,1);
+                               ^
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:69:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/RobotDrive.h:67:7: note: initializing argument 1 of 'void RobotDrive::SetInvertedMotor(RobotDrive::MotorType, bool)'
+  void SetInvertedMotor(MotorType motor, bool isInverted);
+       ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:25:52 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:25:53 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:34:28: error: 'myRobot' is not a class, namespace, or enumeration
+   myRobot.SetInvertedMotor(myRobot::kFrontLeftMotor,1);
+                            ^
+..\src\Robot.cpp:35:28: error: 'myRobot' is not a class, namespace, or enumeration
+   myRobot.SetInvertedMotor(myRobot::kFrontRightMotor,1);
+                            ^
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:26:45 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:26:46 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:29:04 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:29:05 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+14:33:28 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+14:33:29 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+14:34:35 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+14:34:36 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+15:02:20 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+15:02:21 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+15:04:03 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+15:04:04 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:51:13 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:51:14 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:54:02 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:54:03 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+16:56:10 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+16:56:11 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:11:07 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:11:08 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:14:01 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:14:02 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:17:42 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:17:43 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In constructor 'Robot::Robot()':
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+..\src\Robot.cpp:31:10: error: no matching function for call to 'DigitalInput::DigitalInput()'
+    line(0)
+          ^
+..\src\Robot.cpp:31:10: note: candidate is:
+In file included from C:\Users\Falcons/wpilib/cpp/current/include/WPILib.h:42:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note: DigitalInput::DigitalInput(uint32_t)
+  explicit DigitalInput(uint32_t channel);
+           ^
+C:\Users\Falcons/wpilib/cpp/current/include/DigitalInput.h:21:11: note:   candidate expects 1 argument, 0 provided
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4
+17:20:10 **** Incremental Build of configuration Simulate for project Arcade Drive ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\Users\Falcons\Documents\MinGW\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\frc\bin;C:\Users\Falcons\Downloads\e\eclipse]
+17:20:11 **** Incremental Build of configuration Debug for project Arcade Drive1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Arcade Drive1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Robot.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+Info: Nothing to build for Mecanum Drive2
+Info: Nothing to build for Mecanum Drive4

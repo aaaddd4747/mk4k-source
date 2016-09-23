@@ -1,0 +1,235 @@
+#include "WPILib.h"
+#include <iostream>
+#include <tgmath.h>
+using namespace std;
+/**
+ * This is a demo program showing how to use Mecanum control with the RobotDrive class.
+ */
+//a function which neatly and cleanly gets the sign of a value
+
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
+class Robot: public SampleRobot
+{
+    // Channels for the wheels
+    const static int frontLeftChannel	= 2;
+    const static int rearLeftChannel	= 3;
+    const static int frontRightChannel	= 1;
+    const static int rearRightChannel	= 0;
+
+    const static int joystickChannel	= 0;
+
+	RobotDrive robotDrive;	// robot drive system
+	Joystick stick;			// only joystick
+	//Jaguar *j;
+    BuiltInAccelerometer accel;
+	//Button b8;//gr8 b8 m8 i r8 8/8
+float fn(float x)
+{
+
+	//der funktion below is this:
+	/*       2                    x-2
+	 *     -x      + 6x   +   1.32
+	 * y = ------------------------------
+	 *                 5
+	 */
+	x = 10*x;//it works within the range of 0 -> 10
+	float a,b,c;
+	a = -pow(x,2.0);
+	b = 6*x;
+	c = x;
+	c -= 2;
+	c = pow(1.32,c);
+	c = x*c;
+	x = a+b+c;
+	x = x/5;
+	x = x/10;//return to range of 0 -> 1
+	if(x>1)
+			cout<<"arntegar ogreload"<<endl;//if we are lucky, we may be visited by our ogrelord during turns
+	return x;
+}
+float fn2(float x, float a)
+{
+	return (pow(x+a,2) - pow(a,2))/(pow(1+a,2)-pow(a,2));
+}
+
+float ctrlCurve(float a,float kil)//control curve and deadzoneX
+{
+	a = -a;//account for stupidity
+	bool mienNEG = false;
+	//kil = 0.20;//deadzone control var
+	if(a<0)//negative handling
+	{
+		a = -a;
+		mienNEG = true;
+	}
+	if(a<kil)//deadzone implementation
+	{
+		a = 0;
+	}
+	else
+	{
+		a = (a-kil)/(1-kil);
+	}
+	//a = fn(a);
+	a = fn2(a,0.0);
+	if (a > 1)//range check!
+		a = 1;
+	//TODO implement curve
+	if(mienNEG)//return to negatives
+	{
+		a = -a;
+	}
+	a = a*(-(stick.GetThrottle()-1)/2);//TODO make a better throttle implementation
+	return a;//return to return
+}
+public:
+	Robot() :
+			robotDrive(frontLeftChannel, rearLeftChannel,
+					   frontRightChannel, rearRightChannel),	// these must be initialized in the same order
+			stick(joystickChannel)								// as they are declared above.
+	{
+		robotDrive.SetExpiration(0.1);
+		robotDrive.SetInvertedMotor(RobotDrive::kFrontLeftMotor, true);	// invert the left side motors
+		robotDrive.SetInvertedMotor(RobotDrive::kRearLeftMotor, true);	// you may need to change or remove this to match your robot
+
+
+	}
+
+	void RobotInit()
+	{
+		cout << "MK4K SYS_INIT"<<endl;
+	//	j = new Jaguar(4);
+	}
+	/**
+	 * Runs the motors with Mecanum drive.
+	 */
+	void Autonomous()//auto-nom, yum!
+	{//placeholder test thingy
+		//robotDrive.SetExpiration(10);
+		/*for(float i = 0;i<=1;i = i+0.01)
+		{
+			robotDrive.MecanumDrive_Cartesian(0,i,0);
+			Wait(0.1);
+		}
+		Wait(3);
+		robotDrive.MecanumDrive_Cartesian(0,0,0);
+		robotDrive.SetExpiration(0.1);*/
+	}
+	void OperatorControl()
+	{
+		int POVerty;
+		float mX,mY,mZ,fA = 0.15,fB = 1.5,volte,vMult = 1,vThresh = 9;//rawr.quothethemotor.rar
+		robotDrive.SetSafetyEnabled(false);
+		while (IsOperatorControl() && IsEnabled())
+		{
+		//	cout<<"no compile error"<<endl;
+			//Wait(0.005); // wait 5ms to avoid hogging CPU cycles
+			//read current voltage
+			volte = DriverStation::GetInstance()->GetBatteryVoltage();
+			//cout <<"voltage: "<< volte << endl;
+			//read stick for user input
+			mX = ctrlCurve(stick.GetX(),0.15);
+			mY = ctrlCurve(stick.GetY(),0.10);
+			mZ = 0.75*(ctrlCurve(stick.GetZ()-0.05,0.35));
+			//POV hat test thingy
+			POVerty = stick.GetPOV();
+			//cout << "POV: "<<POVerty<<endl;
+			//cout << "mZ:  "<<mZ<<endl;
+			switch(POVerty)
+			{//clockwise rotation in degrees
+			default://not pressed
+				break;
+			case 0:
+				mY = fA/fB;
+				mX = 0;
+				break;
+			case 45:
+				mX = -fA;
+				mY = fA/fB;
+				break;
+			case 90:
+				mX = -fA;
+				mY = 0;
+				break;
+			case 135:
+				mX = -fA;
+				mY = -fA/fB;
+				break;
+			case 180:
+				mX = 0;
+				mY = -fA/fB;
+				break;
+			case 225:
+				mX = fA;
+				mY = -fA/fB;
+				break;
+			case 270:
+				mX = fA;
+				mY = 0;
+				break;
+			case 315:
+				mX = fA;
+				mY = fA/fB;
+				break;
+			}
+			//handbrake
+			//TODO make this handbrake actually active brake
+			if(stick.GetTrigger())
+			{
+				float brakePressure = 0.1;
+				//mX = 0;
+				//mY = 0;
+				//mZ = 0;
+				if(mY != 0)
+				{
+					mY = mY>0?-brakePressure:brakePressure;
+				}
+				if(mX != 0)
+				{
+					mX = mX>0?-brakePressure:brakePressure;
+				}
+				if(mZ != 0)
+				{
+					mZ = mZ>0?-brakePressure:brakePressure;
+				}
+
+			}
+			//account for motor pref
+			mZ -= mY>0 ? 0.05*mY : -0.05*mY;//ternary ftw
+			mZ += mX>0 ? 0.05*mX : 0.2*mX;//translate control fix maybe?
+			//brownout protection
+
+			mY = mY*vMult;
+			mX = mX*vMult;
+			mZ = mZ*vMult;
+			if(volte < vThresh)
+			{
+				vMult -= 0.05;
+				//vMult = 0.5/(vThresh - volte);
+			}
+			else
+				vMult += 0.001;
+			if(vMult > 1)
+				vMult = 1;
+			if(vMult < 0)
+				vMult = 0;
+			cout << "x: "<<stick.GetX()<<"		y: "<<stick.GetY()<<"	z: "<<stick.GetZ()<<"		mX: "<<mX<<"		mY: "<<mY<<"		mZ: "<<mZ<<endl;
+			//finally, send command to the motors
+			robotDrive.MecanumDrive_Cartesian(mX,mY,mZ);
+			if(stick.GetRawButton(8))
+			{
+				//j->SetSpeed(0.5);
+				cout<<"gr8 b8 m8"<<endl;
+			}
+			else
+			{
+				//j->SetSpeed(0);
+			}//*/
+			SmartDashboard::PutBoolean("DB/LED 0",stick.GetRawButton(8));
+		}
+	}
+};
+
+START_ROBOT_CLASS(Robot);

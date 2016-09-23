@@ -1,0 +1,8 @@
+15:57:20 **** Incremental Build of configuration Debug for project Mecanum Drive ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp:1:20: fatal error: WPILib.h: No such file or directory
+compilation terminated.
+
+15:57:21 Build Finished (took 668ms)
+

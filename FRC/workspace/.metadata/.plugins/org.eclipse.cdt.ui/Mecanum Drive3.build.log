@@ -1,0 +1,8 @@
+12:41:05 **** Incremental Build of configuration Debug for project Mecanum Drive3 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\Mecanum Drive3\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+Assembler messages:
+Fatal error: can't create src\Robot.o: Invalid argument
+
+12:41:09 Build Finished (took 3s.408ms)
+

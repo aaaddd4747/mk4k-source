@@ -1,0 +1,14 @@
+11:50:22 **** Rebuild of configuration Debug for project cmdbase test 1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Commands\\ExampleCommand.o" "..\\src\\Commands\\ExampleCommand.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\CommandBase.o" "..\\src\\CommandBase.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Subsystems\\ExampleSubsystem.o" "..\\src\\Subsystems\\ExampleSubsystem.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\OI.o" "..\\src\\OI.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Subsystems\\drive.o" "..\\src\\Subsystems\\drive.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Falcons/wpilib/cpp/current/include" "-IC:\\Users\\Falcons\\workspace\\cmdbase test 1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Commands\\opMush.o" "..\\src\\Commands\\opMush.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Falcons/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Subsystems\\drive.o" "src\\Subsystems\\ExampleSubsystem.o" "src\\Robot.o" "src\\OI.o" "src\\Commands\\opMush.o" "src\\Commands\\ExampleCommand.o" "src\\CommandBase.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Falcons/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+
+11:50:40 Build Finished (took 18s.373ms)
+

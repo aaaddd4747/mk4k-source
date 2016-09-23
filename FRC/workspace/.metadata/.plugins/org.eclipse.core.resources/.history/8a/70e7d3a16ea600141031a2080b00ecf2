@@ -1,0 +1,168 @@
+#include "WPILib.h"
+#include <iostream>
+//#include <cmath>
+using namespace std;
+/**
+ * This is a demo program showing how to use Mecanum control with the RobotDrive class.
+ */
+//a function which neatly and cleanly gets the sign of a value
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
+class Robot: public SampleRobot
+{
+
+    // Channels for the wheels
+    const static int frontLeftChannel	= 2;
+    const static int rearLeftChannel	= 3;
+    const static int frontRightChannel	= 1;
+    const static int rearRightChannel	= 0;
+
+    const static int joystickChannel	= 0;
+
+	RobotDrive robotDrive;	// robot drive system
+	Joystick stick;			// only joystick
+	//Jaguar *j;
+	//Button b8;//gr8 b8 m8 i r8 8/8
+float ctrlCurve(float a,float kil)//control curve and deadzoneX
+{
+	a = -a;//account for stupidity
+	bool mienNEG = false;
+	//kil = 0.20;//deadzone control var
+	if(a<0)//negative handling
+	{
+		a = -a;
+		mienNEG = true;
+	}
+	if(a<kil)//deadzone implementation
+	{
+		a = 0;
+	}
+	else
+	{
+		a = (a-kil)/(1-kil);
+	}
+	if (a > 1)//range check!
+		a = 1;
+	//TODO implement curve
+	if(mienNEG)//return to negatives
+	{
+		a = -a;
+	}
+	a = a*(-(stick.GetThrottle()-1)/2);//TODO make a better throttle implementation
+	return a;//return to return
+}
+public:
+	Robot() :
+			robotDrive(frontLeftChannel, rearLeftChannel,
+					   frontRightChannel, rearRightChannel),	// these must be initialized in the same order
+			stick(joystickChannel)								// as they are declared above.
+	{
+		robotDrive.SetExpiration(0.1);
+		robotDrive.SetInvertedMotor(RobotDrive::kFrontLeftMotor, true);	// invert the left side motors
+		robotDrive.SetInvertedMotor(RobotDrive::kRearLeftMotor, true);	// you may need to change or remove this to match your robot
+
+
+	}
+
+	void RobotInit()
+	{
+	//	j = new Jaguar(4);
+	}
+	/**
+	 * Runs the motors with Mecanum drive.
+	 */
+	void Autonomous()//auto-nom, yum!
+	{//placeholder test thingy
+		robotDrive.SetExpiration(10);
+		for(float i = 0;i<=1;i = i+0.01)
+		{
+			robotDrive.MecanumDrive_Cartesian(0,i,0);
+			Wait(0.1);
+		}
+		Wait(3);
+		robotDrive.MecanumDrive_Cartesian(0,0,0);
+		robotDrive.SetExpiration(0.1);
+	}
+	void OperatorControl()
+	{
+		int POVerty;
+		float mX,mY,mZ,fA = 0.15,fB = 1.5;//rawr.quothethemotor.rar
+		robotDrive.SetSafetyEnabled(false);
+		while (IsOperatorControl() && IsEnabled())
+		{
+			Wait(0.005); // wait 5ms to avoid hogging CPU cycles
+        	//read stick for user input
+			mX = ctrlCurve(stick.GetX(),0.15);
+			mY = ctrlCurve(stick.GetY(),0.10);
+			mZ = 0.5*(ctrlCurve(stick.GetZ()-(mX/3)*sgn(stick.GetX()),0.35));
+
+			//POV hat test thingy
+			POVerty = stick.GetPOV();
+			//cout << "POV: "<<POVerty<<endl;
+			//cout << "mZ:  "<<mZ<<endl;
+			switch(POVerty)
+			{//clockwise rotation in degrees
+			default://not pressed
+				break;
+			case 0:
+				mY = fA/fB;
+				mX = 0;
+				break;
+			case 45:
+				mX = -fA;
+				mY = fA/fB;
+				break;
+			case 90:
+				mX = -fA;
+				mY = 0;
+				break;
+			case 135:
+				mX = -fA;
+				mY = -fA/fB;
+				break;
+			case 180:
+				mX = 0;
+				mY = -fA/fB;
+				break;
+			case 225:
+				mX = fA;
+				mY = -fA/fB;
+				break;
+			case 270:
+				mX = fA;
+				mY = 0;
+				break;
+			case 315:
+				mX = fA;
+				mY = fA/fB;
+				break;
+			}
+			//handbrake (MUST BE LAST!!!1!1)
+			if(stick.GetTrigger())
+			{
+				//robotDrive.MecanumDrive_Cartesian(0,0,0);
+				mX = 0;
+				mY = 0;
+				mZ = 0;
+			}
+			//finally, send command to the motors
+			robotDrive.MecanumDrive_Cartesian(mX,mY,mZ);
+			if(stick.GetRawButton(8))
+			{
+
+				//j->SetSpeed(0.5);
+				cout<<"gr8 b8 m8"<<endl;
+			}
+			else
+			{
+				//j->SetSpeed(0);
+			}//*/
+
+			SmartDashboard::PutBoolean("DB/LED 0",stick.GetRawButton(8));
+		}
+	}
+
+};
+
+START_ROBOT_CLASS(Robot);

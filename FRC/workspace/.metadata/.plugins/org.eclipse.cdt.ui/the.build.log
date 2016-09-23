@@ -1,0 +1,7 @@
+15:13:34 **** Incremental Build of configuration Debug for project the ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\the.o" "..\\src\\the.cpp" 
+..\src\the.cpp:10:9: error: #include expects "FILENAME" or <FILENAME>
+
+15:13:36 Build Finished (took 2s.404ms)
+

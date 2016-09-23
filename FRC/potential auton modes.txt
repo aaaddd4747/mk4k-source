@@ -1,0 +1,11 @@
+
+-1	do nothing (no jumper)	
+0	T&C over carpet
+1	tc over soring platform
+2	robot only from human player
+3	robot only from scoring platform
+4	skew left auton
+5	skew right auton
+6	
+7	
+8	
